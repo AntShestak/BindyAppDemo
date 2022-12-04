@@ -50,11 +50,13 @@ namespace BindyAppDemo
                 switch (webRequest.result)
                 {
                     case UnityWebRequest.Result.ConnectionError:
+                        OnErrorReceived?.Invoke(webRequest.error);
+                        break;
                     case UnityWebRequest.Result.DataProcessingError:
-                        Debug.LogError(url + ": Error: " + webRequest.error);
+                        OnErrorReceived?.Invoke(webRequest.error);
                         break;
                     case UnityWebRequest.Result.ProtocolError:
-                        Debug.LogError(url + ": HTTP Error: " + webRequest.error);
+                        OnErrorReceived?.Invoke(webRequest.error);
                         break;
                     case UnityWebRequest.Result.Success:
                        
