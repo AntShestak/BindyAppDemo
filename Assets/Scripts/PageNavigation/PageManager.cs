@@ -32,7 +32,6 @@ namespace BindyAppDemo
 
         private void SceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            Debug.Log(scene.buildIndex);
             CanvasManager.Instance.SetPageName(_pageNames[scene.buildIndex]);
         }
 

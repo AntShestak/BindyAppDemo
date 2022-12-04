@@ -36,6 +36,7 @@ namespace BindyAppDemo
 
         private void SetActive(bool value)
         {
+            if (_image == null) Debug.Log("isNull");
             _image.enabled = value;
             _message.gameObject.SetActive(value);
             _button.gameObject.SetActive(value);
