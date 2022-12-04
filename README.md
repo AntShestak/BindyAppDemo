@@ -4,6 +4,9 @@ Unity App demo based on supplied requirements
 ### Unity version 
 2021.3.9f1 (LTS)
 
+### Resolution
+1920x1080
+
 ### Networking
 Due to lack of networking project experience I have structured the project as follows. 
 
