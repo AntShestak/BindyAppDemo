@@ -12,3 +12,8 @@ ApiController class utilises UnityWebRequest to request data from photos endpoin
 DataManager class issues the initial call to ApiController and subscribes to event of succesfull response.
 
 ErrorPanel class subscribed to error response
+
+### Texture Loading
+TextureLoader is a script responsible for loading Texture using UnityWebTextureRequest as Unity docs state it is the most efficient way to download texture in Unity.
+TextureLoader is attached to every scroll entry instance and is an instance by itself. Therefore scroll entry object subscribes to that particular instance events rather than static events.   
+TextureLoader emits 3 events OnLoading, OnLoaded and OnError.
