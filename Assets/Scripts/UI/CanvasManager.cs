@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -10,8 +11,7 @@ namespace BindyAppDemo
 
         [SerializeField] TextMeshProUGUI _pageNameText;
 
-        [SerializeField] ScrollEntry _entry;
-        [SerializeField] ScrollEntry _entry2;
+        private ScrollPopulator _scrollPopulator;
 
         private void Awake()
         {
@@ -23,6 +23,8 @@ namespace BindyAppDemo
                 Instance = this;
 
             #endregion
+
+            _scrollPopulator = GetComponent<ScrollPopulator>();
         }
 
         public void SetPageName(string name)
@@ -30,9 +32,9 @@ namespace BindyAppDemo
             _pageNameText.text = name;
         }
 
-        public void PopulateScroll()
+        public void PopulateScroll(List<PhotoData> data)
         {
-            
+            _scrollPopulator.Populate(data);
         }
 
     }

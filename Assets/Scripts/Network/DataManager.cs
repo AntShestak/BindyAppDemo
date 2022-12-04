@@ -45,10 +45,10 @@ namespace BindyAppDemo
         private void DataReceived(List<PhotoData> photos)
         {
             Debug.Log("Data received: " + photos[0].Title);
-           
+            CanvasManager.Instance.PopulateScroll(photos);
         }
 
-        public void Retry()
+        public void RequestData()
         {
             GetData();
         }

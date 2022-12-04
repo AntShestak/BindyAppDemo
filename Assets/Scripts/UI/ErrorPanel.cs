@@ -50,7 +50,7 @@ namespace BindyAppDemo
         private void TryAgain()
         {
             SetActive(false);
-            DataManager.Instance.Retry();
+            DataManager.Instance.RequestData();
         }
 
     }
