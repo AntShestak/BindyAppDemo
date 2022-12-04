@@ -69,20 +69,28 @@ namespace BindyAppDemo
             //take are of overlapping
             _entryIndexAtFirstPosition = (_entryIndexAtFirstPosition >= _entries.Count) ? _entryIndexAtFirstPosition - _entries.Count : _entryIndexAtFirstPosition;
 
-            for (int i = 1; i < _placeholders.Length - 1; i++)
+            for (int i = 1; i < _placeholders.Length; i++)
             {
                 int entryIndex = _entryIndexAtFirstPosition + i;
                 //overlap
                 if (_entryIndexAtFirstPosition < 0) _entryIndexAtFirstPosition = _entries.Count - i;
 
-                _entries[entryIndex].MovePositionAndSize(_placeholders[i].anchoredPosition, _placeholders[i].sizeDelta);
+                
+                if (i == _placeholders.Length - 1)
+                {
+                    //last entry dealing with separetely
+                    _entries[_entryIndexAtFirstPosition].SetPosition(_placeholders[i].anchoredPosition);
+                    _entries[_entryIndexAtFirstPosition].SetSize(_placeholders[i].sizeDelta);
+                }
+                else
+                    _entries[entryIndex].MovePositionAndSize(_placeholders[i].anchoredPosition, _placeholders[i].sizeDelta);
+
 
             }
 
+            
 
-            //last entry dealing with separetely
-            _entries[_entryIndexAtFirstPosition].SetPosition(_placeholders[_placeholders.Length - 1].anchoredPosition);
-            _entries[_entryIndexAtFirstPosition].SetSize(_placeholders[_placeholders.Length - 1].sizeDelta);
+            
         }
 
         
