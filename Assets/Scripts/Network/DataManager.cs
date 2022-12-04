@@ -45,6 +45,7 @@ namespace BindyAppDemo
         private void DataReceived(List<PhotoData> photos)
         {
             Debug.Log("Data received: " + photos[0].Title);
+           
         }
 
         public void Retry()

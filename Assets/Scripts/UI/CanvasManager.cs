@@ -10,6 +10,9 @@ namespace BindyAppDemo
 
         [SerializeField] TextMeshProUGUI _pageNameText;
 
+        [SerializeField] ScrollEntry _entry;
+        [SerializeField] ScrollEntry _entry2;
+
         private void Awake()
         {
             #region Singleton
@@ -25,6 +28,11 @@ namespace BindyAppDemo
         public void SetPageName(string name)
         {
             _pageNameText.text = name;
+        }
+
+        public void PopulateScroll()
+        {
+            
         }
 
     }
