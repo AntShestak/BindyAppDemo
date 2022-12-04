@@ -18,6 +18,17 @@ namespace BindyAppDemo
         private void Start()
         {
             _scrollbar.onValueChanged.AddListener(CheckScrollValue);
+            DataManager.Instance.RequestData();
+        }
+
+        private void OnEnable()
+        {
+            ApiController.OnPhotoDataLoaded += DataReceived;
+        }
+
+        private void OnDisable()
+        {
+            ApiController.OnPhotoDataLoaded -= DataReceived;
         }
 
         public void Populate(List<PhotoData> data)
@@ -46,6 +57,11 @@ namespace BindyAppDemo
                 _isExpansionAllowed = false;
                 DataManager.Instance.RequestData();
             }
+        }
+
+        private void DataReceived(List<PhotoData> data)
+        {
+            Populate(data);
         }
     }
 }

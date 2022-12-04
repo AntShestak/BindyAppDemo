@@ -35,7 +35,7 @@ namespace BindyAppDemo
 
         private string url ="https://jsonplaceholder.typicode.com/photos";
 
-        public void GetPhotos()
+        public void GetPhotoData()
         {
             StartCoroutine("GetPhotosRequest");
         }

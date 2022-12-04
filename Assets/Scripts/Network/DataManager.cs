@@ -8,6 +8,8 @@ namespace BindyAppDemo
     public class DataManager : MonoBehaviour
     {
         public static DataManager Instance;
+
+        public static event Action<List<PhotoData>> OnDataReceived;
         
         private ApiController _controller;
 
@@ -22,31 +24,14 @@ namespace BindyAppDemo
             _controller = GetComponent<ApiController>();
         }
 
-        private void OnEnable()
-        {
-            ApiController.OnPhotoDataLoaded += DataReceived;
-        }
-
-        private void OnDisable()
-        {
-            ApiController.OnPhotoDataLoaded -= DataReceived;
-        }
-
-        private void Start()
-        {
-            GetData();
-        }
+       
 
         private void GetData()
         {
-            _controller.GetPhotos();
+            _controller.GetPhotoData();
         }
 
-        private void DataReceived(List<PhotoData> photos)
-        {
-            Debug.Log("Data received: " + photos[0].Title);
-            CanvasManager.Instance.PopulateScroll(photos);
-        }
+       
 
         public void RequestData()
         {
