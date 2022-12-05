@@ -52,7 +52,7 @@ namespace BindyAppDemo
             ApiController.OnPhotoDataLoaded -= PopulateZoom;
         }
 
-        private void MoveRight()
+        public void MoveRight()
         {
             if (_isInputLocked) return;
 
@@ -78,7 +78,7 @@ namespace BindyAppDemo
             }
         }
 
-        private void MoveLeft()
+        public void MoveLeft()
         {
             if (_isInputLocked) return;
 
