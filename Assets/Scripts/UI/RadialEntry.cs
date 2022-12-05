@@ -69,7 +69,7 @@ namespace BindyAppDemo
         {
             
 
-            float speed = 1f; //this value should be in RadialZoom.cs
+            float speed = 2.5f; //this value should be in RadialZoom.cs
             float i = 0; //interpolator
 
             Vector2 startPos = _trans.anchoredPosition;
