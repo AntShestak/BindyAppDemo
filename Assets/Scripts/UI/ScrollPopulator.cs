@@ -52,7 +52,7 @@ namespace BindyAppDemo
 
         private void CheckScrollValue(float value)
         {
-            if (value < 0 && _isExpansionAllowed)
+            if (value <= 0 && _isExpansionAllowed)
             {
                 _isExpansionAllowed = false;
                 DataManager.Instance.RequestData();
